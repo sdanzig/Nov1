@@ -7,6 +7,7 @@
 //
 
 #import "Nov1AppDelegate.h"
+#import "View.h"
 
 @implementation Nov1AppDelegate
 
@@ -15,6 +16,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    View *view = [[View alloc] init];
+    [self.window addSubview:view];
     [self.window makeKeyAndVisible];
     return YES;
 }
