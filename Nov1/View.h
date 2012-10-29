@@ -27,8 +27,10 @@
     NSString *labelFont;
     NSString *infoFont;
     NSString *numberFont;
-    
     SystemSoundID soundFileObject;
+    int sceneCount;
+    char subScene;
+    int takeCount;
 }
 
 @end

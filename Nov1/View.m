@@ -50,15 +50,26 @@
         // Create a system sound object representing the sound file.
         AudioServicesCreateSystemSoundID ((CFURLRef)CFBridgingRetain(crack), &soundFileObject);
         [self setMultipleTouchEnabled:YES];
+        sceneCount = 1;
+        subScene = 'A';
+        takeCount = 1;
     }
     return self;
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     if(!clapboardOpen) {
-        NSLog(@"touch!");
+        if([touches count] == 2) {
+            if(subScene == 'C') {
+                subScene = 'A';
+                ++sceneCount;
+            } else {
+                ++subScene;
+            }
+        } else if([touches count] == 1) {
+            ++takeCount;
+        }
         [self setNeedsDisplay];
-//        [self performSelector: @selector(setNeedsDisplay) withObject: nil afterDelay: 1.0];
     }
 }
 
@@ -150,8 +161,8 @@ bool clapboardOpen;
 
     //Placeholder text
     NSString *productionString = @"The Shining";
-    NSString *sceneString = @"12G";
-    NSString *takeString = @"4";
+    NSString *sceneString = [NSString stringWithFormat:@"%d%c",sceneCount,subScene];
+    NSString *takeString = [NSString stringWithFormat:@"%d",takeCount];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
     [formatter setDateFormat:@"MMMM dd, yyyy"];
