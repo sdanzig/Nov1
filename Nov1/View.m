@@ -62,12 +62,13 @@
         if([touches count] == 2) {
             if(subScene == 'C') {
                 subScene = 'A';
-                ++sceneCount;
+                sceneCount++;
             } else {
-                ++subScene;
+                subScene++;
             }
+            takeCount = 1;
         } else if([touches count] == 1) {
-            ++takeCount;
+            takeCount++;
         }
         [self setNeedsDisplay];
     }
