@@ -23,15 +23,14 @@
         // Set background to light brown
         self.backgroundColor = UIColorFromRGB(0xD8C7A9);
         clapboardOpen = true;
+        viewWidth = self.bounds.size.width;
+        viewHeight = self.bounds.size.height;
         textSize = 18.0;
         labelFont = @"KannadaSangamMN-Bold";
         infoFont = @"ChalkboardSE-Regular";
         numberFont = @"Courier-Bold";
         CGSize textBounds = [@"Production" sizeWithFont:[UIFont fontWithName:labelFont size:textSize]];
-        actualTextHeight = textBounds.height * 0.4;
-        bodyMargin = 10;       
-        viewWidth = self.bounds.size.width;
-        viewHeight = self.bounds.size.height;
+        bodyMargin = 10;
         bodyWidth = 3.0 * viewHeight / 5.0;
         bodyHeight = (7.0 / 8.0) * (3.0 * viewWidth / 5.0);
         stickWidth = bodyWidth;
@@ -39,8 +38,14 @@
         colorBlockWidth = stickWidth / 11.0;
         textAreaWidth = bodyWidth - (bodyMargin * 2);
         textAreaHeight = bodyHeight / 6;
+        if(textBounds.height < textAreaHeight) {
+            textSize *= 2;
+            textBounds = [@"Production" sizeWithFont:[UIFont fontWithName:labelFont size:textSize]];
+        }
+        CGFloat adjustmentFactor =  0.4;
+        actualTextHeight = textBounds.height * adjustmentFactor;
         CGSize numberBounds = [@"16G" sizeWithFont:[UIFont fontWithName:numberFont size:textSize * 2]];
-        CGFloat actualNumHeight = numberBounds.height * 0.4;
+        CGFloat actualNumHeight = numberBounds.height * adjustmentFactor;
         numberYPos = ((textAreaHeight*2) - actualNumHeight) / 2 + (textAreaHeight * 3);
         
         //Initialize sound
@@ -115,7 +120,7 @@ bool clapboardOpen;
     CGContextSetRGBFillColor(c, 1.0, 1.0, 1.0, 1.0);
     CGContextSelectFont(c, [labelFont UTF8String], textSize, kCGEncodingMacRoman);
     CGContextShowTextAtPoint(c, xPos, yPos, [text UTF8String], [text length]);
-    CGSize labelBounds = [text sizeWithFont:[UIFont fontWithName:labelFont size:18.0]];
+    CGSize labelBounds = [text sizeWithFont:[UIFont fontWithName:labelFont size:textSize]];
     return labelBounds.width;
 }
 
