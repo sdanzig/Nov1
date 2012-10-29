@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F407C10F163E72A300694B0E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F407C10E163E72A300694B0E /* AudioToolbox.framework */; };
+		F407C111163E741F00694B0E /* crack.caf in Resources */ = {isa = PBXBuildFile; fileRef = F407C110163E741F00694B0E /* crack.caf */; };
 		F4A71257163C1F39008F66D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A71256163C1F39008F66D4 /* UIKit.framework */; };
 		F4A71259163C1F39008F66D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A71258163C1F39008F66D4 /* Foundation.framework */; };
 		F4A7125B163C1F39008F66D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A7125A163C1F39008F66D4 /* CoreGraphics.framework */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F407C10E163E72A300694B0E /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F407C110163E741F00694B0E /* crack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = crack.caf; sourceTree = "<group>"; };
 		F4A71252163C1F39008F66D4 /* Nov1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nov1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A71256163C1F39008F66D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F4A71258163C1F39008F66D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F407C10F163E72A300694B0E /* AudioToolbox.framework in Frameworks */,
 				F4A71257163C1F39008F66D4 /* UIKit.framework in Frameworks */,
 				F4A71259163C1F39008F66D4 /* Foundation.framework in Frameworks */,
 				F4A7125B163C1F39008F66D4 /* CoreGraphics.framework in Frameworks */,
@@ -54,6 +59,7 @@
 		F4A71247163C1F39008F66D4 = {
 			isa = PBXGroup;
 			children = (
+				F407C10E163E72A300694B0E /* AudioToolbox.framework */,
 				F4A7125C163C1F39008F66D4 /* Nov1 */,
 				F4A71255163C1F39008F66D4 /* Frameworks */,
 				F4A71253163C1F39008F66D4 /* Products */,
@@ -91,6 +97,7 @@
 		F4A7125D163C1F39008F66D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F407C110163E741F00694B0E /* crack.caf */,
 				F4A7125E163C1F39008F66D4 /* Nov1-Info.plist */,
 				F4A7125F163C1F39008F66D4 /* InfoPlist.strings */,
 				F4A71262163C1F39008F66D4 /* main.m */,
@@ -160,6 +167,7 @@
 				F4A71269163C1F39008F66D4 /* Default.png in Resources */,
 				F4A7126B163C1F39008F66D4 /* Default@2x.png in Resources */,
 				F4A7126D163C1F39008F66D4 /* Default-568h@2x.png in Resources */,
+				F407C111163E741F00694B0E /* crack.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
